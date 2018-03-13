@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
+
+
 <script>
+
+var computerScore = 0;
+var playerScore = 0;
 
 computerPlay = function(){
 result = Math.floor(Math.random() * 3);
@@ -15,6 +20,52 @@ else
 return "Scissors";
 }
 }
+
+
+rockPaperScissors = function() {
+
+var computerSelection = computerPlay();
+console.log(computerSelection);
+var playerPrompt = prompt("Choose your move sucker");
+var playerSelection = playerPrompt.charAt(0).toUpperCase() + playerPrompt.slice(1).toLowerCase();
+
+if (computerSelection == playerSelection) {
+alert ("No one wins!");
+}
+if (computerSelection == "Rock" && playerSelection == "Scissors") {
+computerScore++;
+alert ("Computer Wins! Rock Blunts Scissors: Player Score = " + playerScore + " Computer Score = " + computerScore);
+}
+if (computerSelection == "Scissors" && playerSelection == "Paper") {
+computerScore++;
+alert ("Computer Wins! Scissors cut paper: Player Score = " + playerScore + " Computer Score = " + computerScore);
+}
+if (computerSelection == "Paper" && playerSelection == "Rock") {
+computerScore++;
+alert ("Computer Wins! Paper wraps up Rock: Player Score = " + playerScore + " Computer Score = " + computerScore);
+}
+if (playerSelection == "Rock" && computerSelection == "Scissors") {
+playerScore++;
+alert ("Player Wins! Rock Blunts Scissors: Player Score = " + playerScore + " Computer Score = " + computerScore);
+}
+if (playerSelection == "Scissors" && computerSelection == "Paper") {
+playerScore++;
+alert ("Player Wins! Scissors cut paper: Player Score = " + playerScore + " Computer Score = " + computerScore);
+}
+if (playerSelection == "Paper" && computerSelection == "Rock") {
+playerScore++;
+alert ("Player Wins! Paper wraps up Rock: Player Score = " + playerScore + " Computer Score = " + computerScore);
+}
+
+if (playerScore == 5) {
+alert ("PLAYER IS THE MEGA CHAMP");
+}
+if (computerScore == 5) {
+alert ("COMPUTER IS THE MEGA CHAMP");
+}
+}
+
+
 
 </script>
 </html>
